@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #location {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="location"></div><br>
+    <div id="location2"></div>
+    <button onclick="printIP()">Print IP Address</button>
+    <script>
+      function printIP() {
+        console.log("Your IP address is: " + userip);
+      }
+    </script>
+    <script src="https://l2.io/ip.js?var=userip"></script>
+    <script>
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          document.getElementById("location").innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+
+      function showPosition(position) {
+        document.getElementById("location").innerHTML += "<br>Your location is: Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude;
+      }
+    </script>
+    <script>
+      getLocation();
+    </script>
+  </body>
+</html>
