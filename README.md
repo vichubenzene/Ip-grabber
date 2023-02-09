@@ -1,5 +1,5 @@
 # Ip-grabber
-A simple website to print IP address in console and display longitude and latitude.. 
+A simple website to print IP address in  **`console`** and display longitude and latitude.. 
 
 
 live -> https://ip-grabber-ftw.netlify.app/
